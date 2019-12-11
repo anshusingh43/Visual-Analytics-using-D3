@@ -1,1 +1,12 @@
 
+# Basic Exercise 
+
+In this exercise, we will try to learn the basic D3 syntax. 
+
+1. d3.select
+2. d3.selectAll
+3. selection.data
+
+After you run this file, you can make some changes as mentioned at the bottom of the file.
+
+Enjoy!
