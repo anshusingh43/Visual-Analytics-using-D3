@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>D3 Test</title>
+	<meta charset="utf-8">
+	<script src="http://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+	<div id = "div1">
+		<p> Hello world </p>
+		<p> Hello world </p>
+		<p> Hello world </p>
+		<p> Hello world </p>
+	</div> 	
+	<div id = "div2">
+	</div> 	
+	
+	<script type="text/javascript">
+
+		//style the color of all paragrahs in div1 
+		// var v1 = d3.select("#div1")
+		//var v2 = d3.selectAll("p") 
+		// s2.style("color","green")
+		//s2.style("text-align", "center")
+		
+		//the code below is called chaining
+		//it's same as the above code
+		d3.select("#div1")
+		  .selectAll("p")
+			.style("color", "green")
+			.style("text-align", "center")
+
+		//create four paragraphs in div2 and style them
+		var arr = [1, 1]
+		d3.select("#div1")
+		  .selectAll("p")
+		  .data(arr)
+		  //.exit() --> try to remove the comment and see what changes happen with this 
+		  //.append("p") --> try to append this as well
+		    .text("D3 created Hello world")
+			.style("color", "red")
+			.style("text-align", "center")
+			
+//keep the changes after each task
+//task 1: Change d3.select("#div2")	to d3.select("#div1") and see how the html page will be changed. --> it is showing 2 red text which is showing me the extra text from the d2 after the enter is processed. Enter will bind extra 2 from d2 into paragraph and append them so that is why we see only 2 not 6.		
+//task 2: (a) change var arr = [1, 1, 1, 1, 1, 1] to var arr = [1, 1] --> just the green one showing because there is no extra to get appended.
+// and (b) change .enter() to .exit() and (c) remove .append("p"), then see how the html page will be changed. 
+//task 3: remove .exit() and see how the html page will be changed. 
+
+
+
+	</script>	
+</body>
+</html>
+
+
