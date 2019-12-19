@@ -1,0 +1,5 @@
+Now, this is the continuation part of Exercise3, where we drew 3 circles in 2 rows.
+
+In this exrecise, we are trying to perform certain action on those cirles. We will try to perform an on-click action 
+where clicking the upper circle changes the color of circles clicked on both the rows.
+
