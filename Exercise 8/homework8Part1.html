@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Homework8 Part1</title>
+	<meta charset="utf-8">
+	<script src="http://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var width = 700
+		var height = 1000
+		
+		d3.select("body").append("svg")
+		  .attr("width", width)
+		  .attr("height", height)
+		  
+		var dataX = [3,6,9,7,2,13]
+		var dataY = [1,5,8,3,18,26,30]
+		var xscale = d3.scaleLinear().domain([0, d3.max(dataX)]).range([0, width - 100]);
+		var yscale = d3.scaleLinear().domain([0, d3.max(dataY)]).range([height/2, 100]);
+		
+		var g = d3.select("svg")
+				  .append("g")
+				  
+		circles = g.selectAll("circle")
+		  .data(d3.zip(dataX,dataY))
+		  .enter()
+		  .append("circle")
+			.attr("r", 6)
+			.attr("fill", "red") 
+			.attr("cx", function(d) {return xscale(d[0])} )
+			.attr("cy", function(d) {return yscale(d[1])} )
+		
+		var y_axis = d3.axisLeft().scale(yscale);
+		
+		var x_axis = d3.axisBottom().scale(xscale);
+			   
+	g.append("g")
+            .attr("transform", "translate(0, 500)")
+            .call(x_axis)
+			
+	g.append("g")
+            .attr("transform", "translate(0, 0)")
+            .call(y_axis)
+	
+	g.attr("transform", "translate(50, -10)")
+           
+			
+			
+
+	</script>
+</body>
+</html>
